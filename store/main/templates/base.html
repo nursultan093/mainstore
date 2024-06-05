@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Store{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+
+
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav__wrapper">
+                <h1>Store</h1>
+                <ul class="nav__ul">
+                    <li class="nav__li"><a href="{% url 'main:product_list' %}" class="nav__link">Каталог</a></li>
+                    <li class="nav__li"><a href="{% url 'user_auth:login' %}" class="nav__link">Войти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+    <footer>
+        <p>&copy; 2024 Store. All rights reserved.</p>
+    </footer>
+</body>
+</html>
